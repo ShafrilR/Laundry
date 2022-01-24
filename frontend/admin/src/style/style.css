@@ -1,0 +1,11 @@
+.marginlogin{
+    margin-top: 120px;
+}
+.cover{
+    background: url("../image/cov.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+.height{
+    height: 10px;
+}
