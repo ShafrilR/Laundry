@@ -9,11 +9,15 @@ import Transaksi from "./pages/Transaksi";
 import Kasir from "./kasir/pages/Home"
 import MemberK from "./kasir/pages/Member"
 import TransaksiK from "./kasir/pages/Transaksi"
+import Page from "./pages/First"
+import Page2 from "./kasir/pages/Page"
 
 export default class App extends React.Component{
   render(){
     return(
       <Switch>
+        <Route path="/page2" component={Page2}/>
+        <Route path="/page" component={Page}/>
         <Route exact path="/" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/member" component={Member}/>

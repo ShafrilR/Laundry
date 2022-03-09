@@ -3,6 +3,7 @@ import Navbar from "../components/navbar"
 import axios from "axios"
 import { base_url } from "../config.js"
 import $ from "jquery"
+import ReactToPdf from "react-to-pdf"
 
 export default class Transaksi extends React.Component{
     constructor(){
@@ -207,15 +208,21 @@ export default class Transaksi extends React.Component{
     }
 
     render(){
+        const target = React.createRef()
+        const optionPDF = {
+            orientation: 'landscape',
+            unit: 'cm',
+            format: [21,29.7]
+        }
         return(
             <div>
                 <Navbar />
-                <div className="container">
+                <div ref={target} className="container">
                     <br></br>
                     <h3 className="text-bold text-dark mt-2 text-center">Daftar Transaksi</h3>
                     <br></br>
                     <div className="row">
-                    <table className="table table-bordered table-hover text-center">
+                    <table  className="table table-bordered table-hover text-center">
                         <thead className="thead-dark">
                             <tr>
                                 <th>ID Transaksi</th>
@@ -248,9 +255,9 @@ export default class Transaksi extends React.Component{
                                             <label class="btn btn-outline-success" onClick={() => this.Detail(item)}>
                                                 Detail
                                             </label>
-                                            <label class="btn btn-outline-danger" onClick={() => this.dropTransaksi(item)}>
+                                            {/* <label class="btn btn-outline-danger" onClick={() => this.dropTransaksi(item)}>
                                                 Delete
-                                            </label>
+                                            </label> */}
                                         </div>
                                     </td>
                                 </tr>
@@ -259,9 +266,18 @@ export default class Transaksi extends React.Component{
                     </table>
                     </div>
                     <br></br>
-                    <button className="btn btn-dark" onClick={() => this.Add()}>
-                        Transaksi Baru
-                   </button>
+                    <ReactToPdf targetRef={target} filename="Generate Transaksi Laundry.pdf" scale={1} options={optionPDF}>
+                        { ({ toPdf }) => (
+                        <div className="btn-group btn-group-toggle">
+                            <label class="btn btn-dark" onClick={() => this.Add()} >
+                                Transaksi Baru
+                            </label>
+                            <label class="btn btn-outline-dark" onClick={toPdf} >
+                                Generate PDF
+                            </label>
+                        </div>
+                        )} 
+                    </ReactToPdf>
                    <br></br>
                    <br></br>
                 </div>

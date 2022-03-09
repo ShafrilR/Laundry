@@ -2,6 +2,7 @@ import React from "react"
 import Navbar from "../components/navbar"
 import axios from "axios"
 import { base_url } from "../config.js"
+import "../style/style.css"
 
 export default class Home extends React.Component{
     constructor(){
@@ -126,7 +127,7 @@ export default class Home extends React.Component{
                         <strong>Halo {this.state.userName}</strong>
                     </h3>
                     <h5 className="my-2 text-center ">
-                        Welcome Admin 
+                        - Welcome Admin - 
                     </h5>
                     <br></br>
                     <div className="row">

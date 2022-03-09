@@ -74,7 +74,7 @@ app.put('/',verify,  async (req, res) => {
 })
 
 // DELETE
-app.delete('/:id_member',verify,  async (req, res) => {
+app.delete('/:id_member', verify,  async (req, res) => {
     let param = { id_member: req.params.id_member }
     member.destroy({where:param})
     .then(result => {

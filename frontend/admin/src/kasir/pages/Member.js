@@ -167,6 +167,9 @@ export default class Member extends React.Component{
                                      Jenis Kelamin
                                     <select class="form-control mb-1" value={this.state.jenis_kelamin} 
                                     onChange={ev => this.setState({jenis_kelamin: ev.target.value})} required>
+                                        <option selected>
+                                            Pilih Jenis Kelamin
+                                        </option>
                                         <option value="L">
                                             Laki Laki
                                         </option>

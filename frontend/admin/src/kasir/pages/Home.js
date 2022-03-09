@@ -86,7 +86,7 @@ export default class Home extends React.Component{
                         <strong>Halo {this.state.userName}</strong>
                     </h3>
                     <h5 className="my-2 text-center ">
-                        Welcome Kasir
+                        - Welcome Kasir -
                     </h5>
                     <br></br>
                     <div className="row">

@@ -29,7 +29,7 @@ app.get('/', verify, async (req,res) =>{
 })
 
 // POST
-app.post('/',  async (req, res) => {
+app.post('/', verify, async (req, res) => {
     let data = {
         id_transaksi: req.body.id_transaksi,
         id_paket: req.body.id_paket,
@@ -88,6 +88,7 @@ app.delete('/:id_detail',verify,  async (req, res) => {
     })
 })
 
+// GET Detail with ID Transaksi
 app.get('/:id_transaksi', verify,  async (req,res) =>{
     let param = { id_transaksi: req.params.id_transaksi }
     detail.findAll({where:param})

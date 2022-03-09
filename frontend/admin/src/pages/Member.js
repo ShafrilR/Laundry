@@ -4,6 +4,7 @@ import axios from "axios"
 import { base_url } from "../config.js"
 import $ from "jquery"
 
+
 export default class Member extends React.Component{
     constructor(){
         super()

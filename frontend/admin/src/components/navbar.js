@@ -19,10 +19,15 @@ class Navbar extends React.Component{
                 </button>
                 {/* menu */}
                 <div id="menu" className="navbar-collapse collapse">
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav mr-auto ">
+                    <li className="nav-item">
+                            <Link to="/page" className="nav-link">
+                                Home
+                            </Link>
+                        </li>
                         <li className="nav-item">
                             <Link to="/" className="nav-link">
-                                Home
+                                Dashboard
                             </Link>
                         </li>
                         <li className="nav-item">

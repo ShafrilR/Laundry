@@ -35,13 +35,13 @@ export default class Login extends React.Component{
                 let token = response.data.token
                 localStorage.setItem("user", JSON.stringify(user))
                 localStorage.setItem("token", token)
-                this.props.history.push("/")
+                this.props.history.push("/page")
             }else if (this.state.logged && response.data.data.role === "kasir"){
                 let user = response.data.data
                 let token = response.data.token
                 localStorage.setItem("user", JSON.stringify(user))
                 localStorage.setItem("token", token)
-                this.props.history.push("/kasir")
+                this.props.history.push("/page2")
             } else {
                 this.setState({message: response.data.message})
             }

@@ -1,0 +1,8 @@
+.title{
+    margin-top: 275px;
+}
+.cov{
+    background: url("../image/bg2.jpg");
+    background-size: cover;
+    height: 100vh;
+}

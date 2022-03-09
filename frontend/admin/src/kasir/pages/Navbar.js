@@ -21,8 +21,13 @@ class Navbar extends React.Component{
                 <div id="menu" className="navbar-collapse collapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/kasir" className="nav-link">
+                            <Link to="/page2" className="nav-link">
                                 Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/kasir" className="nav-link">
+                                Dashboard
                             </Link>
                         </li>
                         <li className="nav-item">

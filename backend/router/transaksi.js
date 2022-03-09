@@ -30,7 +30,7 @@ app.get('/',verify, async (req,res) =>{
 })
 
 // POST
-app.post('/', async (req, res) => {
+app.post('/',verify, async (req, res) => {
     let data = {
         id_member: req.body.id_member,
         tgl: req.body.tgl,
