@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import axios from "axios"
 import { base_url } from "../config.js"
 import $ from "jquery"
-import ReactToPdf from "react-to-pdf"
+import domToPdf from "dom-to-pdf"
 
 export default class Transaksi extends React.Component{
     constructor(){
@@ -191,6 +191,17 @@ export default class Transaksi extends React.Component{
         $("#modal_up").modal("hide")
     }
 
+    convertPdf(){
+        // mengambil element yg ditarget
+        let element = document.getElementById('target')
+        let options = {
+            filename: "Generate Transaksi Laundry.pdf"
+        }
+        domToPdf(element, options, () =>{
+            window.alert("File will download soon")
+        })
+    }
+
 
     render(){
         const target = React.createRef()
@@ -202,7 +213,7 @@ export default class Transaksi extends React.Component{
         return(
             <div>
                 <Navbar />
-                <div ref={target} className="container">
+                <div ref={target} id="target" className="container">
                     <br></br>
                     <h3 className="text-bold text-dark mt-2 text-center">Daftar Transaksi</h3>
                     <br></br>
@@ -248,18 +259,10 @@ export default class Transaksi extends React.Component{
                     </table>
                     </div>
                     <br></br>
-                    <ReactToPdf targetRef={target} filename="Generate Transaksi Laundry.pdf" scale={1} options={optionPDF}>
-                        { ({ toPdf }) => (
-                        <div className="btn-group btn-group-toggle">
-                            <label class="btn btn-dark" onClick={() => this.Add()} >
-                                Transaksi Baru
-                            </label>
-                            <label class="btn btn-outline-dark" onClick={toPdf} >
-                                Generate PDF
-                            </label>
-                        </div>
-                        )} 
-                    </ReactToPdf>
+                    <div class="btn-group" role="group">
+                        <button className="btn btn-dark" onClick={() => this.Add()}>Transaksi Baru</button>
+                        <button className="btn btn-outline-dark" onClick={() => this.convertPdf()}>Generate PDF</button>
+                    </div>
                    <br></br>
                    <br></br>
                 </div>

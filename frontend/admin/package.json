@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
     "bootstrap": "^4.6.1",
+    "dom-to-pdf": "^0.2.9",
     "dotenv": "^14.2.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
