@@ -205,11 +205,6 @@ export default class Transaksi extends React.Component{
 
     render(){
         const target = React.createRef()
-        const optionPDF = {
-            orientation: 'landscape',
-            unit: 'cm',
-            format: [21,29.7]
-        }
         return(
             <div>
                 <Navbar />
