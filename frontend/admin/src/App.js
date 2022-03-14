@@ -16,9 +16,9 @@ export default class App extends React.Component{
   render(){
     return(
       <Switch>
+        <Route exact path="/" component={Home}/>
         <Route path="/page2" component={Page2}/>
         <Route path="/page" component={Page}/>
-        <Route exact path="/" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/member" component={Member}/>
         <Route path="/user" component={User}/>

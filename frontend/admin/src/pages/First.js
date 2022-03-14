@@ -1,7 +1,5 @@
 import React from "react"
 import Navbar from "../components/navbar"
-import axios from "axios"
-import { base_url } from "../config.js"
 import "../style/style.css"
 
 export default class First extends React.Component{
