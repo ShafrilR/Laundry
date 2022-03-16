@@ -109,6 +109,7 @@ export default class Member extends React.Component{
                     <br></br>
                     <div className="row">
                     <table className="table table-bordered table-hover text-center">
+                    <caption className="font-italic">List Member Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
                                 <th>ID Member</th>
@@ -152,32 +153,34 @@ export default class Member extends React.Component{
                              <form onSubmit={ev => this.saveMember(ev)}>
                              <div className="modal-body">
                                  
-                                     Nama Member
+                                    <label>Nama Member</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.nama}
                                      onChange={ev => this.setState({nama: ev.target.value})}
                                      required
                                      />
-                                     Alamat
+                                     <label>Alamat</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.alamat}
                                      onChange={ev => this.setState({alamat: ev.target.value})}
                                      required
                                      />
-                                     Jenis Kelamin
-                                    <select class="form-control mb-1" value={this.state.jenis_kelamin} 
-                                    onChange={ev => this.setState({jenis_kelamin: ev.target.value})} required>
-                                        <option selected>
-                                            Pilih Jenis Kelamin
-                                        </option>
-                                        <option value="L">
-                                            Laki Laki
-                                        </option>
-                                        <option value="P">
-                                            Perempuan
-                                        </option>
-                                    </select>
-                                     Nomer Telfon
+                                     <label>Jenis Kelamin</label>
+                                     <div className="form-group was-validated">
+                                        <select class="form-control mb-1" value={this.state.jenis_kelamin} 
+                                        onChange={ev => this.setState({jenis_kelamin: ev.target.value})} required>
+                                            <option value="">
+                                                Pilih Jenis Kelamin
+                                            </option>
+                                            <option value="L">
+                                                Laki Laki
+                                            </option>
+                                            <option value="P">
+                                                Perempuan
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <label>Nomer Telfon</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.tlp}
                                      onChange={ev => this.setState({tlp: ev.target.value})}

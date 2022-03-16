@@ -56,9 +56,9 @@ export default class Login extends React.Component{
                     <div className="col-sm-4 card my-5">
                         <div className="card-header text-center">
                             <h4>Laundry Moklet</h4>
-                            <strong className="text-dark">Welcome User</strong>
+                            <strong className="text-dark">- Welcome User -</strong>
                         </div>
-                        <form onSubmit={ev => this.Login(ev)}>
+                        <form onSubmit={ev => this.Login(ev)} className="needs-validation" >
                             <div className="card-body">
                                 { !this.state.logged ? 
                                 (
@@ -66,28 +66,31 @@ export default class Login extends React.Component{
                                         { this.state.message }
                                     </div>
                                 ) : null }
-                            Username
-                            <input type="text" className="form-control mb-1" value={this.state.username}
-                            onChange={ev => this.setState({username: ev.target.value})}/>
-                            Password
-                            <input type="password" className="form-control mb-1" value={this.state.password}
-                            onChange={ev => this.setState({password: ev.target.value})}
-                            autoComplete="false"/>
-                            Role
-                            <select class="form-control mb-1" value={this.state.role} 
-                            onChange={ev => this.setState({role: ev.target.value})} required>
-                                <option selected>Pilih Role</option>
-                                <option value="admin">
-                                    Admin
-                                </option>
-                                <option value="kasir">
-                                    Kasir
-                                </option>
-                            </select>
+                                <label>Username</label>
+                                <input type="text" className="form-control mb-1" value={this.state.username}
+                                onChange={ev => this.setState({username: ev.target.value})} required/>
+                                <label>Password</label>
+                                <input type="password" className="form-control mb-1" value={this.state.password}
+                                onChange={ev => this.setState({password: ev.target.value})}
+                                autoComplete="false" required/>
+                                <label>Role</label>
+                                <div className="form-group was-validated">
+                                    <select class="form-control mb-1" value={this.state.role} 
+                                    onChange={ev => this.setState({role: ev.target.value})} required>
+                                        <option value="">Pilih Role</option>
+                                        <option value="admin">
+                                            Admin
+                                        </option>
+                                        <option value="kasir">
+                                            Kasir
+                                        </option>
+                                    </select>
+                                </div>
+                                
                             </div>
                             
                             <div className="card-footer text-center">
-                            <button className="btn btn-dark " type="submit">
+                            <button className="btn btn-outline-dark " type="submit">
                                 Login
                             </button>
                             </div>

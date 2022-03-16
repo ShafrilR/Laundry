@@ -214,6 +214,7 @@ export default class Transaksi extends React.Component{
                     <br></br>
                     <div className="row">
                     <table  className="table table-bordered table-hover text-center">
+                    <caption className="font-italic">List Transaksi Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
                                 <th>ID Transaksi</th>
@@ -274,32 +275,36 @@ export default class Transaksi extends React.Component{
                              </div>
                              <form onSubmit={ev => this.saveTransaksi(ev)}>
                              <div className="modal-body">
-                                     ID Member
+                                    <label>ID Member</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.id_member}
                                      onChange={ev => this.setState({id_member: ev.target.value})}
                                      required
                                      />
-                                     Tanggal
+                                     <label>Tanggal</label>
                                      <input type="date" className="form-control mb-1"
                                      value={this.state.tgl}
                                      onChange={ev => this.setState({tgl: ev.target.value})}
                                      required
                                      />
-                                     Batas Waktu
+                                     <label>Batas Watku</label>
                                      <input type="date" className="form-control mb-1"
                                      value={this.state.batas_waktu}
                                      onChange={ev => this.setState({batas_waktu: ev.target.value})}
                                      required
                                      />
-                                     Tanggal Bayar
+                                     <label>Tanggal Bayar</label>
                                      <input type="date" className="form-control mb-1"
                                      value={this.state.tgl_bayar}
                                      onChange={ev => this.setState({tgl_bayar: ev.target.value})}
                                      />
-                                     Status
+                                     <label>Status Order</label>
+                                     <div className="form-group was-validated">
                                     <select class="form-control mb-1" value={this.state.status} 
                                     onChange={ev => this.setState({status: ev.target.value})} required>
+                                        <option value="">
+                                            Pilih Opsi
+                                        </option>
                                         <option value="Baru">
                                             Baru
                                         </option>
@@ -313,9 +318,14 @@ export default class Transaksi extends React.Component{
                                             Diambil
                                         </option>
                                     </select>
-                                    Dibayar
+                                    </div>
+                                    <label>Status Bayar</label>
+                                    <div className="form-group was-validated">
                                     <select class="form-control mb-1" value={this.state.dibayar} 
                                     onChange={ev => this.setState({dibayar: ev.target.value})} required>
+                                        <option value="">
+                                            Pilih Opsi
+                                        </option>
                                         <option value="Dibayar">
                                             Dibayar
                                         </option>
@@ -323,7 +333,8 @@ export default class Transaksi extends React.Component{
                                             Belum Bayar
                                         </option>
                                     </select>
-                                     ID User
+                                    </div>
+                                    <label>ID User</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.id_user}
                                      onChange={ev => this.setState({id_user: ev.target.value})}

@@ -124,6 +124,7 @@ export default class Paket extends React.Component{
                     <br></br>
                     <div className="row">
                     <table className="table table-bordered table-hover text-center">
+                    <caption className="font-italic">List Paket Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
                                 <th>ID Paket</th>
@@ -174,13 +175,13 @@ export default class Paket extends React.Component{
                              <form onSubmit={ev => this.savepaket(ev)}>
                              <div className="modal-body">
                                  
-                                     Jenis Paket
+                                    <label>Jenis Paket</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.jenis}
                                      onChange={ev => this.setState({jenis: ev.target.value})}
                                      required
                                      />
-                                     Harga Paket
+                                     <label>Harga</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.harga}
                                      onChange={ev => this.setState({harga: ev.target.value})}

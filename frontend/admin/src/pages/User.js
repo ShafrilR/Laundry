@@ -132,6 +132,7 @@ export default class User extends React.Component{
                     <br></br>
                     <div className="row">
                     <table className="table table-bordered table-hover text-center">
+                    <caption className="font-italic">List User Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
                                 <th>Nama</th>
@@ -181,28 +182,29 @@ export default class User extends React.Component{
                              </div>
                              <form onSubmit={ev => this.saveUser(ev)}>
                              <div className="modal-body">
-                                     Nama User
+                                    <label>Nama User</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.nama}
                                      onChange={ev => this.setState({nama: ev.target.value})}
                                      required
                                      />
-                                     Username
+                                     <label>Username</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.username}
                                      onChange={ev => this.setState({username: ev.target.value})}
                                      required
                                      />
-                                     Passoword
+                                     <label>Password</label>
                                      <input type="text" className="form-control mb-1"
                                      value={this.state.password}
                                      onChange={ev => this.setState({password: ev.target.value})}
                                      required
                                      />
-                                     Role
+                                     <label>Role</label>
+                                     <div className="form-group was-validated">
                                     <select class="form-control mb-1" value={this.state.role} 
                                     onChange={ev => this.setState({role: ev.target.value})} required>
-                                        <option selected>Pilih Role</option>
+                                        <option value="">Pilih Role</option>
                                         <option value="admin">
                                             Admin
                                         </option>
@@ -210,6 +212,8 @@ export default class User extends React.Component{
                                             Kasir
                                         </option>
                                     </select>
+                                    <div class="invalid-feedback">Silahkan Pilih Role!</div>
+                                </div>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="submit" className="btn btn-dark">
