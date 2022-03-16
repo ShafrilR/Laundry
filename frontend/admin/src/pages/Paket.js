@@ -123,6 +123,7 @@ export default class Paket extends React.Component{
                     <h3 className="text-bold text-dark mt-2 text-center">Daftar Data Paket</h3>
                     <br></br>
                     <div className="row">
+                    <div className="table-responsive">
                     <table className="table table-bordered table-hover text-center">
                     <caption className="font-italic">List Paket Laundry Moklet.</caption>
                         <thead className="thead-dark">
@@ -158,6 +159,7 @@ export default class Paket extends React.Component{
                             </tbody>
                         )) }
                     </table>
+                    </div>
                     </div>
                     <br></br>
                     <button className="btn btn-dark" onClick={() => this.Add()}>
