@@ -44,7 +44,7 @@ app.post('/', verify, async (req, res) => {
     })
     .catch(error => {
         res.json({
-            message: error.message
+            message: "ID Transaksi Tidak Valid"
         })
     })
 })

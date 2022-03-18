@@ -6,7 +6,7 @@ const md5 = require('md5')
 app.use(express.json())
 // memanggil model
 const transaksi = require('../models/index').transaksi
-const detail_transaksi = require("../models/detail").detail
+const detail = require("../models/detail").detail
 
 // memanggil verifyToken agar bisa digunakan
 const verify = require('./verify')
@@ -42,9 +42,21 @@ app.post('/',verify, async (req, res) => {
     }
     transaksi.create(data)
     .then(result => {
-        res.json({
-            message: 'Data Inserted',
-            data: result
+        let idtrans = result.id_transaksi
+        // console.log("tes coba id "+idtrans)
+        let data1 = {
+            id_transaksi: idtrans
+        }
+        detail.bulkCreate(data1)
+        .then(results => {
+            res.json({
+                message: 'Data Inserted',
+                data: results
+            })
+        }).catch(error => {
+            res.json({
+                message: error.message
+            })
         })
     })
     .catch(error => {
