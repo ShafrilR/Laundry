@@ -29,7 +29,7 @@ app.get('/',verify, async (req,res) =>{
 })
 
 // POST
-app.post('/',verify, async (req, res) => {
+app.post('/', async (req, res) => {
     let data = {
         nama: req.body.nama,
         username: req.body.username,
@@ -51,7 +51,7 @@ app.post('/',verify, async (req, res) => {
 })
 
 // PUT
-app.put('/', async (req, res) => {
+app.put('/', verify, async (req, res) => {
     let param = { id_user: req.body.id_user }
     let data = {
         nama: req.body.nama,

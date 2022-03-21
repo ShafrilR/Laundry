@@ -136,6 +136,7 @@ export default class User extends React.Component{
                     <caption className="font-italic">List User Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
+                                <th>ID User</th>
                                 <th>Nama</th>
                                 <th>Username</th>
                                 <th>Role</th>
@@ -145,6 +146,7 @@ export default class User extends React.Component{
                         { this.state.user.map( item => (
                             <tbody>
                                 <tr>
+                                    <td>{item.id_user}</td>
                                     <td>{item.nama}</td>
                                     <td>{item.username}</td>
                                     <td>{item.role}</td>

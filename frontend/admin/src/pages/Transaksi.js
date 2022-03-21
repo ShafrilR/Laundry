@@ -218,6 +218,38 @@ export default class Transaksi extends React.Component{
         })
     }
 
+    displayStatus = (status) => {
+        if (status === "Baru") {
+            return (
+                <div className="badge badge-primary">Baru</div>
+            )
+        } else if (status === "Proses") {
+            return (
+                <div className="badge badge-warning">Proses</div>
+            )
+        } else if (status === "Selesai") {
+            return (
+                <div className="badge badge-success">Selesai</div>
+            )
+        } else if (status === "Diambil") {
+            return (
+                <div className="badge badge-info">Diambil</div>
+            )
+        }
+    }
+
+    displayBayar = (bayar) => {
+        if (bayar === "Belum Bayar") {
+            return (
+                <div className="badge badge-danger">Belum Bayar</div>
+            )
+        } else if (bayar === "Dibayar") {
+            return (
+                <div className="badge badge-success">Dibayar</div>
+            )
+        }
+    }
+
     render(){
         const target = React.createRef()
         return(
@@ -252,8 +284,8 @@ export default class Transaksi extends React.Component{
                                     <td>{item.tgl}</td>
                                     <td>{item.batas_waktu}</td>
                                     <td>{item.tgl_bayar}</td>
-                                    <td>{item.status}</td>
-                                    <td>{item.dibayar}</td>
+                                    <td>{this.displayStatus(item.status)}</td>
+                                    <td>{this.displayBayar(item.dibayar)}</td>
                                     <td>{item.id_user}</td>
                                     <td>
                                         <div class="btn-group btn-group-toggle">
