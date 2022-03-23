@@ -123,6 +123,8 @@ export default class Home extends React.Component{
                 <Navbar />
                 <div className="container mt-2">
                     <br></br>
+                    <br></br>
+                    <br></br>
                     <h3 className="my-2 text-center ">
                         <strong>Halo {this.state.userName}</strong>
                     </h3>
@@ -133,12 +135,14 @@ export default class Home extends React.Component{
                     <div className="row">
                         {/* member count */}
                         <div className="col-lg-6 col-md-6 col-sm-12 mt-2">
-                            <div className="card">
-                                <div className="card-body bg-dark">
-                                    <h4 className="text-white">
+                            <div className="card border-dark">
+                                <div className="card-header">
+                                    <h4 className="text-center">
                                         <strong>Data Member</strong>
                                     </h4>
-                                    <h1 className="text-white">
+                                </div>
+                                <div className="card-body text-center">
+                                    <h1 className="">
                                         <strong>{this.state.dataMember}</strong>
                                     </h1>
                                 </div>
@@ -147,12 +151,14 @@ export default class Home extends React.Component{
 
                         {/* user count */}
                         <div className="col-lg-6 col-md-6 col-sm-12 mt-2">
-                            <div className="card">
-                                <div className="card-body bg-dark">
-                                    <h4 className="text-white">
+                            <div className="card border-dark">
+                                <div className="card-header">
+                                    <h4 className="text-center">
                                         <strong>Data User</strong>
                                     </h4>
-                                    <h1 className="text-white">
+                                </div>
+                                <div className="card-body text-center">
+                                    <h1 className="">
                                         <strong>{this.state.dataUser}</strong>
                                     </h1>
                                 </div>
@@ -161,12 +167,14 @@ export default class Home extends React.Component{
 
                         {/* paket count */}
                         <div className="col-lg-6 col-md-6 col-sm-12 mt-2">
-                            <div className="card">
-                                <div className="card-body bg-secondary">
-                                    <h4 className="text-white">
+                            <div className="card border-dark">
+                                <div className="card-header">
+                                    <h4 className="text-center">
                                         <strong>Data Paket</strong>
                                     </h4>
-                                    <h1 className="text-white">
+                                </div>
+                                <div className="card-body text-center">
+                                    <h1 className="">
                                         <strong>{this.state.dataPaket}</strong>
                                     </h1>
                                 </div>
@@ -175,12 +183,14 @@ export default class Home extends React.Component{
 
                         {/* transaksi count */}
                         <div className="col-lg-6 col-md-6 col-sm-12 mt-2">
-                            <div className="card">
-                                <div className="card-body bg-secondary">
-                                    <h4 className="text-white">
+                            <div className="card border-dark">
+                            <div className="card-header">
+                                    <h4 className="text-center">
                                         <strong>Data Transaksi</strong>
                                     </h4>
-                                    <h1 className="text-white">
+                                </div>
+                                <div className="card-body text-center">
+                                    <h1 className="">
                                         <strong>{this.state.dataTransaksi}</strong>
                                     </h1>
                                 </div>

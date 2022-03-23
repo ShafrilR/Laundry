@@ -193,6 +193,7 @@ export default class Transaksi extends React.Component{
         })
         .catch(error => console.log(error))
         $("#modal_up").modal("hide")
+        this.props.history.push("/transaksi")
     }
 
     dropTransaksi = selectedItem => {
@@ -265,6 +266,7 @@ export default class Transaksi extends React.Component{
                         <caption className="font-italic">List Transaksi Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
+                                <th>No.</th>
                                 <th>ID Transaksi</th>
                                 <th>ID Member</th>
                                 <th>Tanggal</th>
@@ -276,9 +278,10 @@ export default class Transaksi extends React.Component{
                                 <th>Option</th>
                             </tr>
                         </thead>
-                        { this.state.transaksi.map( item => (
+                        { this.state.transaksi.map( (item,index) => (
                             <tbody>
-                                <tr>
+                                <tr key={index}>
+                                    <td>{index+1}</td>
                                     <td>{item.id_transaksi}</td>
                                     <td>{item.id_member}</td>
                                     <td>{item.tgl}</td>
@@ -328,7 +331,7 @@ export default class Transaksi extends React.Component{
 
                 {/* modal transaksi */}
                 <div className="modal fade" id="modal_transaksi">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Form Transaksi</h4>
@@ -416,7 +419,7 @@ export default class Transaksi extends React.Component{
                  
                  {/* modal detail */}
                  <div className="modal fade" id="modal_detail">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Detail Transaksi</h4>
@@ -455,7 +458,7 @@ export default class Transaksi extends React.Component{
 
                  {/* modal up */}
                 <div className="modal fade" id="modal_up">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Update Detail</h4>

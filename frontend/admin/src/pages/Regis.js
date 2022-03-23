@@ -3,70 +3,71 @@ import axios from "axios"
 import { base_url } from "../config";
 import "../style/style.css"
 
-export default class Login extends React.Component{
+export default class Regis extends React.Component{
     constructor(){
         super()
         this.state = {
+            user: [],
+            token: "",
+            action: "",
+            id_user: "",
+            nama: "",
             username: "",
             password: "",
-            role: "",
-            message: "",
-            logged: true
+            role: ""
         }
 
     }
 
-    Login = event => {
+    saveUser = event => {
+
+        this.setState({
+            id_user: 0,
+            nama: "",
+            username: "",
+            password: "",
+            role: ""
+        })
+
         event.preventDefault()
-        let sendData = {
+        let form = {
+            id_user: this.state.id_user,
+            nama: this.state.nama,
             username: this.state.username,
             password: this.state.password,
             role: this.state.role
         }
-
-        let url = base_url + "/auth/login"
-        
-
-        axios.post(url, sendData)
+    
+        let url = base_url + "/user"
+        axios.post(url, form)
         .then(response => {
-            this.setState({logged: response.data.logged})
-            if (this.state.logged && response.data.data.role === "admin") {
-                let user = response.data.data
-                let token = response.data.token
-                localStorage.setItem("user", JSON.stringify(user))
-                localStorage.setItem("token", token)
-                this.props.history.push("/page")
-            }else if (this.state.logged && response.data.data.role === "kasir"){
-                let user = response.data.data
-                let token = response.data.token
-                localStorage.setItem("user", JSON.stringify(user))
-                localStorage.setItem("token", token)
-                this.props.history.push("/page2")
-            } else {
-                this.setState({message: response.data.message})
-            }
+            window.alert(response.data.message)
         })
         .catch(error => console.log(error))
+        this.props.history.push("/login")
     }
 
     render(){
         return(
-            <div className="marginlogin">
+            <div style={{marginTop: "115px"}}>
                 <div className="container d-flex h-100 justify-content-center align-items-center">
-                    <div className="col-sm-5 my-5">
+                    <div className="col-sm-6 my-6">
                         <div className="card border-dark">
-                            <div className="card-header text-center">
-                                <h4>Laundry Moklet</h4>
-                                <strong className="text-dark">- Welcome User -</strong>
-                            </div>
-                            <form onSubmit={ev => this.Login(ev)} className="needs-validation" >
+                        <div className="card-header text-center">
+                            <h4>Form Registrasi</h4>
+                            <strong className="text-dark">- User -</strong>
+                        </div>
+                        <form onSubmit={ev => this.saveUser(ev)} className="needs-validation" >
                             <div className="card-body">
-                                { !this.state.logged ? 
+                                {/* { !this.state.logged ? 
                                 (
-                                    <div className="alert alert-danger mt-1">
+                                    <div className="alert alert-success mt-1">
                                         { this.state.message }
                                     </div>
-                                ) : null }
+                                ) : null } */}
+                                <label>Nama</label>
+                                <input type="text" className="form-control mb-1" value={this.state.nama}
+                                onChange={ev => this.setState({nama: ev.target.value})} required/>
                                 <label>Username</label>
                                 <input type="text" className="form-control mb-1" value={this.state.username}
                                 onChange={ev => this.setState({username: ev.target.value})} required/>
@@ -87,21 +88,16 @@ export default class Login extends React.Component{
                                         </option>
                                     </select>
                                 </div>
-                                <a href="/regis" style={{textDecoration:"none",color: "#000"}}>Registrasi User</a>
-                                {/* <label>
-                                    <a href="" style={{textDecoration:"none",color: "#000"}}>Registrasi</a>
-                                </label> */}
-                                
                             </div>
                             
                             <div className="card-footer text-center">
                             <button className="btn btn-outline-dark " type="submit">
-                                Login
+                                Save Data
                             </button>
                             </div>
                         </form>
                         </div>
-                    </div>
+                    </div>      
                 </div>
             </div>
         )

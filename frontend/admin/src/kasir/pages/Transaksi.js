@@ -202,6 +202,38 @@ export default class Transaksi extends React.Component{
         })
     }
 
+    displayStatus = (status) => {
+        if (status === "Baru") {
+            return (
+                <div className="badge badge-primary">Baru</div>
+            )
+        } else if (status === "Proses") {
+            return (
+                <div className="badge badge-warning">Proses</div>
+            )
+        } else if (status === "Selesai") {
+            return (
+                <div className="badge badge-success">Selesai</div>
+            )
+        } else if (status === "Diambil") {
+            return (
+                <div className="badge badge-info">Diambil</div>
+            )
+        }
+    }
+
+    displayBayar = (bayar) => {
+        if (bayar === "Belum Bayar") {
+            return (
+                <div className="badge badge-danger">Belum Bayar</div>
+            )
+        } else if (bayar === "Dibayar") {
+            return (
+                <div className="badge badge-success">Dibayar</div>
+            )
+        }
+    }
+
 
     render(){
         const target = React.createRef()
@@ -216,8 +248,9 @@ export default class Transaksi extends React.Component{
                     <div className="table-responsive">
                     <table  className="table table-bordered table-hover text-center">
                     <caption className="font-italic">List Transaksi Laundry Moklet.</caption>
-                        <thead className="thead-dark">
+                    <thead className="thead-dark">
                             <tr>
+                                <th>No.</th>
                                 <th>ID Transaksi</th>
                                 <th>ID Member</th>
                                 <th>Tanggal</th>
@@ -229,16 +262,17 @@ export default class Transaksi extends React.Component{
                                 <th>Option</th>
                             </tr>
                         </thead>
-                        { this.state.transaksi.map( item => (
+                        { this.state.transaksi.map( (item,index) => (
                             <tbody>
-                                <tr>
+                                <tr key={index}>
+                                    <td>{index+1}</td>
                                     <td>{item.id_transaksi}</td>
                                     <td>{item.id_member}</td>
                                     <td>{item.tgl}</td>
                                     <td>{item.batas_waktu}</td>
                                     <td>{item.tgl_bayar}</td>
-                                    <td>{item.status}</td>
-                                    <td>{item.dibayar}</td>
+                                    <td>{this.displayStatus(item.status)}</td>
+                                    <td>{this.displayBayar(item.dibayar)}</td>
                                     <td>{item.id_user}</td>
                                     <td>
                                         <div class="btn-group btn-group-toggle">
@@ -281,7 +315,7 @@ export default class Transaksi extends React.Component{
 
                 {/* modal transaksi */}
                 <div className="modal fade" id="modal_transaksi">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Form Transaksi</h4>
@@ -369,7 +403,7 @@ export default class Transaksi extends React.Component{
                  
                  {/* modal detail */}
                  <div className="modal fade" id="modal_detail">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Detail Transaksi</h4>
@@ -407,7 +441,7 @@ export default class Transaksi extends React.Component{
                  </div>
                  {/* modal up */}
                 <div className="modal fade" id="modal_up">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Update Detail</h4>

@@ -136,6 +136,7 @@ export default class User extends React.Component{
                     <caption className="font-italic">List User Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
+                                <th>No.</th>
                                 <th>ID User</th>
                                 <th>Nama</th>
                                 <th>Username</th>
@@ -143,9 +144,10 @@ export default class User extends React.Component{
                                 <th>Option</th>
                             </tr>
                         </thead>
-                        { this.state.user.map( item => (
+                        { this.state.user.map( (item, index)=> (
                             <tbody>
-                                <tr>
+                                <tr key={index}>
+                                    <td>{index+1}</td>
                                     <td>{item.id_user}</td>
                                     <td>{item.nama}</td>
                                     <td>{item.username}</td>
@@ -181,7 +183,7 @@ export default class User extends React.Component{
 
                 {/* modal user */}
                 <div className="modal fade" id="modal_user">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Form User</h4>

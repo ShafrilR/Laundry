@@ -111,8 +111,9 @@ export default class Member extends React.Component{
                     <div className="table-responsive">
                     <table className="table table-bordered table-hover text-center">
                     <caption className="font-italic">List Member Laundry Moklet.</caption>
-                        <thead className="thead-dark">
+                    <thead className="thead-dark">
                             <tr>
+                                <th>No.</th>
                                 <th>ID Member</th>
                                 <th>Nama</th>
                                 <th>Alamat</th>
@@ -120,9 +121,10 @@ export default class Member extends React.Component{
                                 <th>No Telfon</th>
                             </tr>
                         </thead>
-                        { this.state.member.map( item => (
+                        { this.state.member.map( (item,index) => (
                             <tbody>
-                                <tr>
+                                <tr key={index}>
+                                    <td>{index+1}</td>
                                     <td>{item.id_member}</td>
                                     <td>{item.nama}</td>
                                     <td>{item.alamat}</td>
@@ -144,7 +146,7 @@ export default class Member extends React.Component{
 
                 {/* modal member */}
                 <div className="modal fade" id="modal_member">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Form Member</h4>

@@ -128,15 +128,17 @@ export default class Paket extends React.Component{
                     <caption className="font-italic">List Paket Laundry Moklet.</caption>
                         <thead className="thead-dark">
                             <tr>
+                                <th>No.</th>
                                 <th>ID Paket</th>
                                 <th>Jenis Paket</th>
                                 <th>Harga</th>
                                 <th>Option</th>
                             </tr>
                         </thead >
-                        { this.state.paket.map( item => (
+                        { this.state.paket.map( (item,index) => (
                             <tbody>
-                                <tr>
+                                <tr key={index}>
+                                    <td>{index+1}</td>
                                     <td>{item.id_paket}</td>
                                     <td>{item.jenis}</td>
                                     <td>{item.harga}</td>
@@ -171,7 +173,7 @@ export default class Paket extends React.Component{
 
                 {/* modal paket */}
                 <div className="modal fade" id="modal_paket">
-                     <div className="modal-dialog">
+                     <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
                                  <h4>Form Paket</h4>
