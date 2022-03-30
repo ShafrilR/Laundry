@@ -24,16 +24,32 @@ export default class First extends React.Component{
     
     render(){
         return(
-            <div className="cov1">
+            <div className="">
                 <Navbar />
-                <div className="container mt-2">
-                    <div className="title">
-                        <h1 className="my-2 text-center text-white">
-                            <strong>Laundry Moklet</strong>
-                        </h1>
-                        <h5 className="my-2 text-center text-white">
-                            - Let’s get wet, tumble around, and dry off, together -
-                        </h5>
+                <br></br>
+                <div className="container" style={{marginTop: "100px"}}>
+                    <div className="row">
+                        <div className="" style={{marginTop: "70px", marginLeft:"25px"}}>
+                            <h1 className="my-2">
+                                <strong>Laundry</strong> <strong style={{color: "#17a2b7"}}>Moklet</strong>
+                            </h1>
+                            <h6 className="my-2" style={{color: "grey",fontSize: "18px"}}>
+                                Let’s get wet, tumble around, and dry off, together!
+                            </h6>
+                            <a  href="/transaksi">
+                            <button className="btn btn-info" style={{marginTop: "10px"}}>
+                                Entry Transaksi
+                            </button>
+                            </a>
+                            <a  href="/">
+                            <button className="btn btn-outline-dark" style={{marginTop: "10px",marginLeft:"6px"}}>
+                                Dashboard
+                            </button>
+                            </a>
+                        </div>
+                        <div className="" style={{ marginLeft:"100px"}}>
+                            <img src={require('../image/stry-1.svg').default} height={350}/>
+                        </div>
                     </div>
                 </div>
             </div>

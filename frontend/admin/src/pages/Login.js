@@ -51,58 +51,62 @@ export default class Login extends React.Component{
 
     render(){
         return(
-            <div className="marginlogin">
-                <div className="container d-flex h-100 justify-content-center align-items-center">
-                    <div className="col-sm-5 my-5">
-                        <div className="card border-dark">
-                            <div className="card-header text-center">
-                                <h4>Laundry Moklet</h4>
-                                <strong className="text-dark">- Welcome User -</strong>
-                            </div>
-                            <form onSubmit={ev => this.Login(ev)} className="needs-validation" >
-                            <div className="card-body">
-                                { !this.state.logged ? 
-                                (
-                                    <div className="alert alert-danger mt-1">
-                                        { this.state.message }
-                                    </div>
-                                ) : null }
-                                <label>Username</label>
-                                <input type="text" className="form-control mb-1" value={this.state.username}
-                                onChange={ev => this.setState({username: ev.target.value})} required/>
-                                <label>Password</label>
-                                <input type="password" className="form-control mb-1" value={this.state.password}
-                                onChange={ev => this.setState({password: ev.target.value})}
-                                autoComplete="false" required/>
-                                <label>Role</label>
-                                <div className="form-group was-validated">
-                                    <select class="form-control mb-1" value={this.state.role} 
-                                    onChange={ev => this.setState({role: ev.target.value})} required>
-                                        <option value="">Pilih Role</option>
-                                        <option value="admin">
-                                            Admin
-                                        </option>
-                                        <option value="kasir">
-                                            Kasir
-                                        </option>
-                                    </select>
+            <div className="cov1">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <img src={require('../image/login.svg').default} height={420} style={{marginLeft: "80px",marginTop: "170px"}}/>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="d-flex h-100 justify-content-center align-items-center" style={{marginRight: "90px", marginTop: "75px"}}>
+                                <div className="col-md-11">
+                                    <div className="card">
+                                    <img src={require('../image/logo2.svg').default} height={70} style={{marginTop: "20px"}}/>
+                                        {/* <div className="card-header text-center">
+                                            <img src={require('../image/logo2.svg').default} height={70}/>
+                                        </div> */}
+                                        <form onSubmit={ev => this.Login(ev)} className="needs-validation" >
+                                        <div className="card-body">
+                                            { !this.state.logged ? 
+                                            (
+                                                <div className="alert alert-danger mt-1">
+                                                    { this.state.message }
+                                                </div>
+                                            ) : null }
+                                            <label>Username</label>
+                                            <input type="text" className="form-control mb-1" value={this.state.username}
+                                                onChange={ev => this.setState({username: ev.target.value})} required/>
+                                            <label>Password</label>
+                                            <input type="password" className="form-control mb-1" value={this.state.password}
+                                            onChange={ev => this.setState({password: ev.target.value})}
+                                            autoComplete="false" required/>
+                                            <label>Role</label>
+                                            <div className="form-group was-validated">
+                                                <select class="form-control mb-1" value={this.state.role} 
+                                                onChange={ev => this.setState({role: ev.target.value})} required>
+                                                    <option value="">Pilih Role</option>
+                                                    <option value="admin">
+                                                        Admin
+                                                    </option>
+                                                    <option value="kasir">
+                                                        Kasir
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <a href="/regis" style={{textDecoration:"none",color: "#17a2b7", fontSize: "15px"}}>Registrasi User</a>                       
+                                        </div>
+                                        <div className="card-footer text-center">
+                                            <button className="btn btn-outline-info " type="submit">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <a href="/regis" style={{textDecoration:"none",color: "#000"}}>Registrasi User</a>
-                                {/* <label>
-                                    <a href="" style={{textDecoration:"none",color: "#000"}}>Registrasi</a>
-                                </label> */}
-                                
                             </div>
-                            
-                            <div className="card-footer text-center">
-                            <button className="btn btn-outline-dark " type="submit">
-                                Login
-                            </button>
-                            </div>
-                        </form>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

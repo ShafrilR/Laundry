@@ -121,16 +121,16 @@ export default class Home extends React.Component{
         return(
             <div>
                 <Navbar />
-                <div className="container mt-2">
-                    <br></br>
+                <div className="container mt-2" style={{width: 800}}>
                     <br></br>
                     <br></br>
                     <h3 className="my-2 text-center ">
-                        <strong>Halo {this.state.userName}</strong>
+                        <strong >Halo </strong> <strong style={{color: "#17a2b7"}}>{this.state.userName}</strong>
                     </h3>
-                    <h5 className="my-2 text-center ">
-                        - Welcome Admin - 
+                    <h5 className="my-2 text-center" style={{color: "grey"}}>
+                        Welcome Admin 
                     </h5>
+                    <br></br>
                     <br></br>
                     <div className="row">
                         {/* member count */}
@@ -143,7 +143,7 @@ export default class Home extends React.Component{
                                 </div>
                                 <div className="card-body text-center">
                                     <h1 className="">
-                                        <strong>{this.state.dataMember}</strong>
+                                        <strong style={{color: "#17a2b7"}}>{this.state.dataMember}</strong>
                                     </h1>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ export default class Home extends React.Component{
                                 </div>
                                 <div className="card-body text-center">
                                     <h1 className="">
-                                        <strong>{this.state.dataUser}</strong>
+                                        <strong style={{color: "#17a2b7"}}>{this.state.dataUser}</strong>
                                     </h1>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@ export default class Home extends React.Component{
                                 </div>
                                 <div className="card-body text-center">
                                     <h1 className="">
-                                        <strong>{this.state.dataPaket}</strong>
+                                        <strong style={{color: "#17a2b7"}}>{this.state.dataPaket}</strong>
                                     </h1>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@ export default class Home extends React.Component{
                                 </div>
                                 <div className="card-body text-center">
                                     <h1 className="">
-                                        <strong>{this.state.dataTransaksi}</strong>
+                                        <strong style={{color: "#17a2b7"}}>{this.state.dataTransaksi}</strong>
                                     </h1>
                                 </div>
                             </div>

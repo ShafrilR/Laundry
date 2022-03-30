@@ -49,55 +49,60 @@ export default class Regis extends React.Component{
 
     render(){
         return(
-            <div style={{marginTop: "115px"}}>
-                <div className="container d-flex h-100 justify-content-center align-items-center">
-                    <div className="col-sm-6 my-6">
-                        <div className="card border-dark">
-                        <div className="card-header text-center">
-                            <h4>Form Registrasi</h4>
-                            <strong className="text-dark">- User -</strong>
+            <div className="rgs">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <img src={require('../image/rgs.svg').default} height={500} style={{marginLeft: "50px", marginTop: "150px"}}/>
                         </div>
-                        <form onSubmit={ev => this.saveUser(ev)} className="needs-validation" >
-                            <div className="card-body">
-                                {/* { !this.state.logged ? 
-                                (
-                                    <div className="alert alert-success mt-1">
-                                        { this.state.message }
-                                    </div>
-                                ) : null } */}
-                                <label>Nama</label>
-                                <input type="text" className="form-control mb-1" value={this.state.nama}
-                                onChange={ev => this.setState({nama: ev.target.value})} required/>
-                                <label>Username</label>
-                                <input type="text" className="form-control mb-1" value={this.state.username}
-                                onChange={ev => this.setState({username: ev.target.value})} required/>
-                                <label>Password</label>
-                                <input type="password" className="form-control mb-1" value={this.state.password}
-                                onChange={ev => this.setState({password: ev.target.value})}
-                                autoComplete="false" required/>
-                                <label>Role</label>
-                                <div className="form-group was-validated">
-                                    <select class="form-control mb-1" value={this.state.role} 
-                                    onChange={ev => this.setState({role: ev.target.value})} required>
-                                        <option value="">Pilih Role</option>
-                                        <option value="admin">
-                                            Admin
-                                        </option>
-                                        <option value="kasir">
-                                            Kasir
-                                        </option>
-                                    </select>
+                        <div className="col-md-6">
+                        <div className="d-flex h-100 justify-content-center align-items-center"  style={{marginRight: "100px", marginTop: "52px"}} >
+                            <div className="col-md-12">
+                                <div className="card">
+                                    <img src={require('../image/logo2.svg').default} height={70} style={{marginTop: "20px"}}/>
+                                    {/* <div className="card-header text-center">
+                                        <img src={require('../image/logo2.svg').default} height={70}/>
+                                    </div> */}
+                                    <form onSubmit={ev => this.saveUser(ev)} className="needs-validation" >
+                                        <div className="card-body">
+                                            <label>Nama</label>
+                                            <input type="text" className="form-control mb-1" value={this.state.nama}
+                                            onChange={ev => this.setState({nama: ev.target.value})} required/>
+                                            <label>Username</label>
+                                            <input type="text" className="form-control mb-1" value={this.state.username}
+                                            onChange={ev => this.setState({username: ev.target.value})} required/>
+                                            <label>Password</label>
+                                            <input type="password" className="form-control mb-1" value={this.state.password}
+                                            onChange={ev => this.setState({password: ev.target.value})}
+                                            autoComplete="false" required/>
+                                            <label>Role</label>
+                                            <div className="form-group was-validated">
+                                                <select class="form-control mb-1" value={this.state.role} 
+                                                onChange={ev => this.setState({role: ev.target.value})} required>
+                                                    <option value="">Pilih Role</option>
+                                                    <option value="admin">
+                                                        Admin
+                                                    </option>
+                                                    <option value="kasir">
+                                                        Kasir
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div className="text-center"></div>
+                                        </div>
+
+                                        
+                                        <div className="card-footer text-center">
+                                            <button className="btn btn-outline-info " type="submit">
+                                                Save Data
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
-                            
-                            <div className="card-footer text-center">
-                            <button className="btn btn-outline-dark " type="submit">
-                                Save Data
-                            </button>
-                            </div>
-                        </form>
+                            </div>      
                         </div>
-                    </div>      
+                        </div>
+                    </div>
                 </div>
             </div>
         )

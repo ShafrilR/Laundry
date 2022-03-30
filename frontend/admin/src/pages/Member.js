@@ -127,15 +127,15 @@ export default class Member extends React.Component{
         return(
             <div>
                 <Navbar />
-                <div className="container">
+                <div className="container" style={{width: 1050}}>
                     <br></br>
-                    <h3 className="text-bold text-dark mt-2 text-center">Daftar Data Member</h3>
+                    <h3 className="text-bold text-dark mt-2 text-center">Data Member</h3>
                     <br></br>
                     <div className="row">
                     <div className="table-responsive">
                     <table className="table table-bordered table-hover text-center">
                     <caption className="font-italic">List Member Laundry Moklet.</caption>
-                        <thead className="thead-dark">
+                        <thead className="text-white" style={{backgroundColor: "black"}}>
                             <tr>
                                 <th>No.</th>
                                 <th>ID Member</th>
@@ -157,7 +157,7 @@ export default class Member extends React.Component{
                                     <td>{item.tlp}</td>
                                     <td>
                                         <div class="btn-group btn-group-toggle">
-                                            <label class="btn btn-outline-primary" onClick={() => this.Edit(item)} >
+                                            <label class="btn btn-outline-info" onClick={() => this.Edit(item)} >
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -177,7 +177,7 @@ export default class Member extends React.Component{
                     </div>
                     </div>
                     <br></br>
-                    <button className="btn btn-dark" onClick={() => this.Add()}>
+                    <button className="btn btn-info" onClick={() => this.Add()}>
                         Member Baru
                    </button>
                    <br></br>
@@ -189,7 +189,7 @@ export default class Member extends React.Component{
                      <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
-                                 <h4>Form Member</h4>
+                                <img src={require('../image/logo2.svg').default} height={60}/>
                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -232,7 +232,7 @@ export default class Member extends React.Component{
                                      />
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="submit" className="btn btn-dark">
+                                    <button type="submit" className="btn btn-outline-info" >
                                         Simpan
                                     </button>
                                 </div>

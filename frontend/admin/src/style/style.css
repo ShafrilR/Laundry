@@ -1,11 +1,33 @@
-.marginlogin{
-    margin-top: 90px;
-}
-.title{
-    margin-top: 275px;
+.content{
+    height: 550px; width: 1200px;
+    margin: 2%;
+    background-color: #fff;
+    padding: 10rem 8rem 10rem 8rem;
+    box-shadow: 0 0 5px 5px rgba(0,0,0, .05)
 }
 .cov1{
-    background: url("../image/bg.jpg");
+    background: url("../image/bg-lg.svg");
     background-size: cover;
     height: 100vh;
+}
+.rgs{
+    background: url("../image/rgstr.svg");
+    background-size: cover;
+    height: 100vh;
+}
+div{
+    font-family: 'Poppins', sans-serif;
+}
+.hvr{
+    color: black;
+}
+.hvr:hover{
+    color: #17a2b7 ;
+    /* color: #17a2b7; */
+}
+a{
+    color: black;
+}
+a:hover{
+    color: #17a2b7 ;
 }

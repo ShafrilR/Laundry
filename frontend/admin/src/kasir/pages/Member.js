@@ -103,15 +103,15 @@ export default class Member extends React.Component{
         return(
             <div>
                 <Navbar />
-                <div className="container">
+                <div className="container" style={{width: 1050}}>
                     <br></br>
-                    <h3 className="text-bold text-dark mt-2 text-center">Daftar Data Member</h3>
+                    <h3 className="text-bold text-dark mt-2 text-center">Data Member</h3>
                     <br></br>
                     <div className="row">
                     <div className="table-responsive">
                     <table className="table table-bordered table-hover text-center">
                     <caption className="font-italic">List Member Laundry Moklet.</caption>
-                    <thead className="thead-dark">
+                        <thead className="text-white" style={{backgroundColor: "black"}}>
                             <tr>
                                 <th>No.</th>
                                 <th>ID Member</th>
@@ -137,7 +137,7 @@ export default class Member extends React.Component{
                     </div>
                     </div>
                     <br></br>
-                    <button className="btn btn-dark" onClick={() => this.Add()}>
+                    <button className="btn btn-info" onClick={() => this.Add()}>
                         Member Baru
                    </button>
                    <br></br>
@@ -149,7 +149,7 @@ export default class Member extends React.Component{
                      <div className="modal-dialog modal-dialog-centered">
                          <div className="modal-content">
                              <div className="modal-header">
-                                 <h4>Form Member</h4>
+                                <img src={require('../image/logo2.svg').default} height={60}/>
                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -192,7 +192,7 @@ export default class Member extends React.Component{
                                      />
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="submit" className="btn btn-dark">
+                                <button type="submit" className="btn btn-outline-info" >
                                         Simpan
                                     </button>
                                 </div>
