@@ -70,8 +70,14 @@ export default class Home extends React.Component{
         })
     }
 
+    getID = () => {
+        let user = JSON.parse(localStorage.getItem('user'))
+        this.setState({id_user: user.id_user})
+    }
+
     componentDidMount(){
         this.getUser()
+        this.getID()
         this.getMember()
         this.getTransaksi()
     }
@@ -84,10 +90,10 @@ export default class Home extends React.Component{
                     <br></br>
                     <br></br>
                     <h3 className="my-2 text-center ">
-                        <strong >Hi </strong> <strong style={{color: "#17a2b7"}}>{this.state.userName}!</strong>
+                        <strong >Hi </strong> <strong style={{color: "#17a2b7"}}>{this.state.userName}</strong>
                     </h3>
                     <h5 className="my-2 text-center" style={{color: "grey"}}>
-                         Welcome Kasir 
+                         Welcome Kasir - <strong style={{color: "#17a2b7"}}>Your ID - {this.state.id_user}</strong>
                     </h5>
                     <br></br>
                     <br></br>

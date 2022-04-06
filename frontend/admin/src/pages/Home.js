@@ -37,6 +37,11 @@ export default class Home extends React.Component{
         this.setState({userName: user.nama})
     }
 
+    getID = () => {
+        let user = JSON.parse(localStorage.getItem('user'))
+        this.setState({id_user: user.id_user})
+    }
+
     getMember = () => {
         let url = base_url + "/member"
         axios.get(url, this.headerConfig())
@@ -111,6 +116,7 @@ export default class Home extends React.Component{
 
     componentDidMount(){
         this.getUser()
+        this.getID()
         this.getMember()
         this.getUserG()
         this.getPaket()
@@ -123,12 +129,11 @@ export default class Home extends React.Component{
                 <Navbar />
                 <div className="container mt-2" style={{width: 800}}>
                     <br></br>
-                    <br></br>
                     <h3 className="my-2 text-center ">
                         <strong >Halo </strong> <strong style={{color: "#17a2b7"}}>{this.state.userName}</strong>
                     </h3>
                     <h5 className="my-2 text-center" style={{color: "grey"}}>
-                        Welcome Admin 
+                        Welcome Admin - <strong style={{color: "#17a2b7"}}>Your ID - {this.state.id_user}</strong>
                     </h5>
                     <br></br>
                     <br></br>

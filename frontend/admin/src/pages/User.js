@@ -128,7 +128,9 @@ export default class User extends React.Component{
                 <Navbar />
                 <div className="container" style={{width: 1050}}>
                     <br></br>
-                    <h3 className="text-bold text-dark mt-2 text-center">Data User</h3>
+                    <h3 className="my-2 text-center">
+                        <a>Data </a> <a style={{color: "#17a2b7"}}>User</a>
+                    </h3>
                     <br></br>
                     <div className="row">
                     <div className="table-responsive">
